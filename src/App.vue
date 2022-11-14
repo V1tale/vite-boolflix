@@ -1,7 +1,7 @@
 <script>
-import AppHeader from "./components/AppHeader.vue"
-import AppSearch from "./components/AppSearch.vue"
-import AppCards from "./components/AppCards.vue"
+import AppHeader from "./components/AppHeader.vue";
+import AppSearch from "./components/AppSearch.vue";
+import AppCards from "./components/AppCards.vue";
 export default {
   data() {
     return {
@@ -12,13 +12,9 @@ export default {
     AppHeader,
     AppSearch,
     AppCards,
-  },
-  methods: {
-    getData() {
-      axios.get(store.URL)
-    } 
   }
 }
+
 </script>
 
 
