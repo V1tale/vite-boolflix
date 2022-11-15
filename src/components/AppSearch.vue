@@ -5,14 +5,15 @@ export default {
     name: "AppSearch",
     data() {
         return {
-
+            store,
         }
     },
     methods: {
         getData() {
-        axios.get(`https://api.themoviedb.org/3/search/movie?api_key=${store.apiKey}&language=it&query=${this.Searchbar}`).then((resp) => {
-            store.movies = resp.data.result
-            console.log(resp.data.results);
+            axios.get(`https://api.themoviedb.org/3/search/movie?api_key=${store.apiKey}&language=it&query=${this.Searchbar}`).then((resp) => {
+                this.store.movies = resp.data.results
+                console.log(store.movies);
+                this.Searchbar = "";
         })}}}
 
 </script>
