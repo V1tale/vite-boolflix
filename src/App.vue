@@ -1,7 +1,6 @@
 <script>
 import AppHeader from "./components/AppHeader.vue";
-import AppSearch from "./components/AppSearch.vue";
-import AppCards from "./components/AppCards.vue";
+import AppMain from "./components/AppMain.vue"
 export default {
   data() {
     return {
@@ -10,8 +9,7 @@ export default {
   },
   components: {
     AppHeader,
-    AppSearch,
-    AppCards,
+    AppMain,
   }
 }
 
@@ -20,8 +18,11 @@ export default {
 
 <template>
   <AppHeader />
-  <AppSearch />
-  <AppCards />
+  <AppMain />
 </template>
 
-<style></style>
+<style lang="scss">
+body {
+  background-color: rgb(26, 26, 26);
+}
+</style>

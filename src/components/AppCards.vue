@@ -69,22 +69,28 @@ export default {
         height:25px;
     }
     .details {
-        width:calc(300px - 6px);
-        height:calc(400px - 6px);
+        width:calc(300px);
+        height:calc(400px);
         color:white;
-        background-color: rgb(26, 26, 26);
+        background-color: black;
         position:absolute;
         top:0;
         left:0;
         display:none;
-        transition: 2s;
         padding: 3px;
         overflow-y: auto;
-    }
-    .details h3:last-child {
+        border: 1px solid white;
+        h3:last-child {
         font-size: .8rem;
+        }
+        * {
+            margin: 10px;
+        }
     }
     .card:hover .details {
         display:block;
+    }
+    h2 {
+        color:white;
     }
 </style>

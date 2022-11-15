@@ -28,8 +28,24 @@ export default {
 
 <template>
     <label for="Search-bar"></label>
-    <input id="search-bar" type="text" v-model="Searchbar">
+    <input  @keyup.enter="getData()" id="search-bar" type="text" v-model="Searchbar">
     <button @click="getData()">Search!</button>
 </template>
 
-<style></style>
+<style lang="scss">
+button {
+    margin-left:3px;
+    padding:5px;
+    color:white;
+    background-color: black;
+    border:2px solid red;
+    border-radius: 5px;
+    cursor:pointer;
+}
+button:hover {
+    background-color: rgba(255, 0, 0, 0.3);
+}
+input:focus {
+    outline: none;
+}
+</style>
