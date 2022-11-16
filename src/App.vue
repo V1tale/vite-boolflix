@@ -17,12 +17,12 @@ export default {
   },
   methods: {
         getData() {
-            axios.get(`https://api.themoviedb.org/3/search/movie?api_key=${store.apiKey}&language=it&query=${this.AppSearch.Searchbar}`).then((resp) => {
+            axios.get(`https://api.themoviedb.org/3/search/movie?api_key=${store.apiKey}&language=it&query=${this.store.Searchbar}`).then((resp) => {
                 this.store.movies = resp.data.results
                 console.log(store.movies);
             }
             ),
-            axios.get(`https://api.themoviedb.org/3/search/tv?api_key=${store.apiKey}&language=it&query=${this.Searchbar}`).then((series) => {
+            axios.get(`https://api.themoviedb.org/3/search/tv?api_key=${store.apiKey}&language=it&query=${this.store.Searchbar}`).then((series) => {
                 this.store.series = series.data.results
                 console.log(store.series);
             })
@@ -39,7 +39,4 @@ export default {
 </template>
 
 <style lang="scss">
-body {
-  background-color: rgb(26, 26, 26);
-}
 </style>

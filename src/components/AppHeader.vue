@@ -14,7 +14,7 @@ export default {
 </script>
 
 <template>
-    <div class="bg">
+    <header>
         <div class="container">
             <div class="content">
                 <div id="logo">
@@ -25,7 +25,7 @@ export default {
                 </div>
             </div> 
         </div>
-    </div>
+    </header>
 </template>
 
 <style lang="scss">
@@ -42,7 +42,8 @@ export default {
     }
 
 }
-.bg {
+header {
         background-color: black;
+        height:10vh;
     }
 </style>

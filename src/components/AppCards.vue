@@ -42,9 +42,9 @@ export default {
                 </div>
                 <div class="details">
                     <h3>{{series.name}}</h3>
-                    <img class="flag" v-if="flags.includes(series.original_language)" :src="`../img/${series.original_language}.png`">
+                    <img class="flag" v-if="store.flags.includes(series.original_language)" :src="`../img/${series.original_language}.png`">
                     <h3 v-else>language: {{series.original_language}}</h3>
-                    <h3>Voto: {{Math.ceil(series.vote_average / 2)}}<i v-for="s in 5" :key="s" :class="s <= Math.ceil(series.vote_average / 2) ? 'fa-solid' : 'fa-regular'" class="fa-star"></i></h3>
+                    <h3>Voto: <i v-for="s in 5" :key="s" :class="s <= Math.ceil(series.vote_average / 2) ? 'fa-solid' : 'fa-regular'" class="fa-star"></i></h3>
                     <h3 v-if="series.overview !=''">{{series.overview}}</h3>
                     <h3 v-else>Descrizione non disponibile</h3>
                 </div>

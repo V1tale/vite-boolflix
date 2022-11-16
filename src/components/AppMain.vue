@@ -15,13 +15,16 @@ export default {
 
 
 <template>
-    <div class="container">
+    <main class="container">
             
         <AppCards />
-    </div>
+    </main>
 </template>
 
 <style lang="scss">
+main {
+  height: 90vh;
+}
     .container h2 {
         padding: 1rem 0;
     }
