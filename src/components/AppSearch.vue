@@ -1,5 +1,5 @@
 <script>
-import axios from "axios";
+
 import {store} from "../store"
 export default {
     name: "AppSearch",
@@ -8,28 +8,15 @@ export default {
             store,
         }
     },
-    methods: {
-        getData() {
-            axios.get(`https://api.themoviedb.org/3/search/movie?api_key=${store.apiKey}&language=it&query=${this.Searchbar}`).then((resp) => {
-                this.store.movies = resp.data.results
-                console.log(store.movies);
-            }
-            )
-            axios.get(`https://api.themoviedb.org/3/search/tv?api_key=${store.apiKey}&language=it&query=${this.Searchbar}`).then((series) => {
-                this.store.series = series.data.results
-                console.log(store.series);
-            })
-            this.Searchbar = "";
-    }
-}
+   
 }
 
 </script>
 
 <template>
     <label for="Search-bar"></label>
-    <input  @keyup.enter="getData()" id="search-bar" type="text" v-model="Searchbar">
-    <button @click="getData()">Search!</button>
+    <input  @keyup.enter="$emit(`getList`)" id="search-bar" type="text" v-model="Searchbar">
+    <button @click="$emit(`getList`)">Search!</button>
 </template>
 
 <style lang="scss">

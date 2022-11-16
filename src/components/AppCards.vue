@@ -5,7 +5,6 @@ export default {
     data() {
         return {
             store,
-            flags:["it", "en", "es", "de", "fr", "us", "cn"]
         }
     },
 }
@@ -23,10 +22,10 @@ export default {
                 </div>
                 <div class="details">
                     <h3>{{movie.title}}</h3>
-                    <img class="flag" v-if="flags.includes(movie.original_language)" :src="`../img/${movie.original_language}.png`">
+                    <img class="flag" v-if="store.flags.includes(movie.original_language)" :src="`../img/${movie.original_language}.png`">
                     <h3 v-else>language: {{movie.original_language}}</h3>
-                    <h3>Rate: {{Math.ceil(movie.vote_average / 2)}}<i v-for="s in 5" :key="s" :class="s <= Math.ceil(movie.vote_average / 2) ? 'fa-solid' : 'fa-regular'" class="fa-star"></i></h3>
-
+                    <h3>Voto: <i v-for="s in 5" :key="s" :class="s <= Math.ceil(movie.vote_average / 2) ? 'fa-solid' : 'fa-regular'" class="fa-star"></i></h3>
+                    <h3>{{movie.credits}}</h3>
                     <h3 v-if="movie.overview != ''">{{movie.overview}}</h3>
                     <h3 v-else>Descrizione non disponibile</h3>
                 </div>
@@ -45,7 +44,7 @@ export default {
                     <h3>{{series.name}}</h3>
                     <img class="flag" v-if="flags.includes(series.original_language)" :src="`../img/${series.original_language}.png`">
                     <h3 v-else>language: {{series.original_language}}</h3>
-                    <h3>Voto: {{series.vote_average}}</h3>
+                    <h3>Voto: {{Math.ceil(series.vote_average / 2)}}<i v-for="s in 5" :key="s" :class="s <= Math.ceil(series.vote_average / 2) ? 'fa-solid' : 'fa-regular'" class="fa-star"></i></h3>
                     <h3 v-if="series.overview !=''">{{series.overview}}</h3>
                     <h3 v-else>Descrizione non disponibile</h3>
                 </div>
@@ -63,7 +62,7 @@ export default {
 }
     .card {
         position:relative;
-        width:300px;
+        width:calc(100% / 4 - 10px);
         height:400px;
         margin:3px;
         .cover img {
@@ -77,8 +76,8 @@ export default {
         border: 1px solid white;
     }
     .details {
-        width:calc(300px);
-        height:calc(400px);
+        width:100%;
+        height: 400px;
         color:white;
         background-color: black;
         position:absolute;
@@ -89,7 +88,7 @@ export default {
         overflow-y: auto;
         border: 1px solid white;
         h3:last-child {
-        font-size: .8rem;
+            font-size: .8rem;
         }
         *:not(i) {
             margin: 10px;
