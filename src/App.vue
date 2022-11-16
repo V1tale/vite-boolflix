@@ -1,7 +1,6 @@
 <script>
 import AppHeader from "./components/AppHeader.vue";
 import AppMain from "./components/AppMain.vue";
-import AppSearch from "./components/AppSearch.vue"
 import {store} from "./store";
 import axios from "axios";
 export default {
@@ -13,7 +12,6 @@ export default {
   components: {
     AppHeader,
     AppMain,
-    AppSearch,
   },
   methods: {
         getData() {

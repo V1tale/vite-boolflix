@@ -74,6 +74,7 @@ export default {
         width:30px;
         height:25px;
         border: 1px solid white;
+        object-fit: cover;
     }
     .details {
         width:100%;
