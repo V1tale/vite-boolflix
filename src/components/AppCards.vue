@@ -25,10 +25,8 @@ export default {
                     <h3>{{movie.title}}</h3>
                     <img class="flag" v-if="flags.includes(movie.original_language)" :src="`../img/${movie.original_language}.png`">
                     <h3 v-else>language: {{movie.original_language}}</h3>
-                    <h3>Rate: {{Math.ceil(movie.vote_average / 2)}}</h3>
+                    <h3>Rate: {{Math.ceil(movie.vote_average / 2)}}<i v-for="s in 5" :key="s" :class="s <= Math.ceil(movie.vote_average / 2) ? 'fa-solid' : 'fa-regular'" class="fa-star"></i></h3>
 
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-regular fa-star"></i>
                     <h3 v-if="movie.overview != ''">{{movie.overview}}</h3>
                     <h3 v-else>Descrizione non disponibile</h3>
                 </div>
@@ -47,7 +45,7 @@ export default {
                     <h3>{{series.name}}</h3>
                     <img class="flag" v-if="flags.includes(series.original_language)" :src="`../img/${series.original_language}.png`">
                     <h3 v-else>language: {{series.original_language}}</h3>
-                    <h3>Rate: {{series.vote_average}}</h3>
+                    <h3>Voto: {{series.vote_average}}</h3>
                     <h3 v-if="series.overview !=''">{{series.overview}}</h3>
                     <h3 v-else>Descrizione non disponibile</h3>
                 </div>
@@ -93,8 +91,16 @@ export default {
         h3:last-child {
         font-size: .8rem;
         }
-        * {
+        *:not(i) {
             margin: 10px;
+        }
+        i {
+            color:orange;
+            margin-left: 3px;
+            font-size: 1rem;
+        }
+        .fa-regular {
+            color:lightblue
         }
     }
     .card:hover .details {
