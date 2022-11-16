@@ -1,6 +1,7 @@
 <script>
 import AppHeader from "./components/AppHeader.vue";
 import AppMain from "./components/AppMain.vue";
+import AppSearch from "./components/AppSearch.vue"
 import {store} from "./store";
 import axios from "axios";
 export default {
@@ -12,10 +13,11 @@ export default {
   components: {
     AppHeader,
     AppMain,
+    AppSearch,
   },
   methods: {
         getData() {
-            axios.get(`https://api.themoviedb.org/3/search/movie?api_key=${store.apiKey}&language=it&query=${this.Searchbar}`).then((resp) => {
+            axios.get(`https://api.themoviedb.org/3/search/movie?api_key=${store.apiKey}&language=it&query=${this.AppSearch.Searchbar}`).then((resp) => {
                 this.store.movies = resp.data.results
                 console.log(store.movies);
             }
@@ -24,7 +26,6 @@ export default {
                 this.store.series = series.data.results
                 console.log(store.series);
             })
-            this.Searchbar = "";
     }
 }
 }
@@ -33,7 +34,7 @@ export default {
 
 
 <template>
-  <AppHeader @getList="getData"/>
+  <AppHeader @getList="getData()"/>
   <AppMain />
 </template>
 

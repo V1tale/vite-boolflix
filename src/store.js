@@ -3,6 +3,6 @@ export const store = reactive({
     apiKey: `8b8eab531e0cb697ecebdaae0f359829`,
     movies: [],
     series: [],
-    flags:["it", "en", "es", "de", "fr", "us", "cn"],
+    flags:["it", "en", "es", "de", "fr", "us", "cn"]
 }
 );

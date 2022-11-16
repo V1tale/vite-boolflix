@@ -21,7 +21,7 @@ export default {
                     <h1>BOOLFLIX</h1>
                 </div>
                 <div class="app-search">
-                    <AppSearch />
+                    <AppSearch @getList="$emit('getList')"/>
                 </div>
             </div> 
         </div>

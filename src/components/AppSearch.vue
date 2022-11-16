@@ -15,8 +15,8 @@ export default {
 
 <template>
     <label for="Search-bar"></label>
-    <input  @keyup.enter="$emit(`getList`)" id="search-bar" type="text" v-model="Searchbar">
-    <button @click="$emit(`getList`)">Search!</button>
+    <input  @keyup.enter="$emit('getList')" id="search-bar" type="text" v-model="Searchbar">
+    <button @click="$emit('getList')">Search!</button>
 </template>
 
 <style lang="scss">
